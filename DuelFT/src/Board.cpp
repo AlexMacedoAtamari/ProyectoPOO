@@ -1,5 +1,7 @@
-#include "Board.h"
+#include "Board.hpp"
 #include <iostream>
+
+using namespace std;
 
 Board::Board() {
     for(int i=0;i<6;i++)
@@ -12,5 +14,7 @@ bool Board::placeCard(Card* card, int r, int c) {
 }
 
 void Board::displayBoard() {
-    std::cout << "Tablero temporal...\n";
+    cout << "Tablero temporal...\n";
 }
+
+
