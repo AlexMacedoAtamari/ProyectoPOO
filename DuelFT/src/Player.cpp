@@ -1,6 +1,6 @@
 #include "Player.hpp"
 
 Player::Player() {
-    name = "";
+    name = "Jugador";
     coins = 0;
 }

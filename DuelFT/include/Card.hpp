@@ -1,16 +1,13 @@
-#ifndef CARD_H
-#define CARD_H
-
-#include <string>
+#ifndef CARD_HPP
+#define CARD_HPP
 
 class Card {
 public:
-    int north, east, south, west;
-    std::string type;
-    std::string effect;
-    int owner;
+    int id;
 
-    Card();
+    Card() {
+        id = 0;
+    }
 };
 
 #endif
