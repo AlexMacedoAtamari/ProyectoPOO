@@ -514,23 +514,26 @@
 1762821369 e:\codeblocks\proyectopoo\sfml\sfml-3.0.2\include\sfml\system\sleep.hpp
 	<SFML/System/Export.hpp>
 
-1763511108 source:e:\codeblocks\proyectopoo\duelft\src\board.cpp
+1763829655 source:e:\codeblocks\proyectopoo\duelft\src\board.cpp
 	"Board.hpp"
-	<iostream>
 
-1763507741 source:e:\codeblocks\proyectopoo\duelft\src\card.cpp
+1764016189 source:e:\codeblocks\proyectopoo\duelft\src\card.cpp
 	"Card.hpp"
-
-1763511287 source:e:\codeblocks\proyectopoo\duelft\src\game.cpp
-	"Game.hpp"
-	<iostream>
 	<SFML/Graphics.hpp>
 
-1763426072 source:e:\codeblocks\proyectopoo\duelft\src\player.cpp
+1764041790 source:e:\codeblocks\proyectopoo\duelft\src\game.cpp
+	"Game.hpp"
+	"Board.hpp"
+	<SFML/Graphics.hpp>
+	<iostream>
+	<algorithm>
+	<cstdlib>
+	<ctime>
+
+1763829655 source:e:\codeblocks\proyectopoo\duelft\src\player.cpp
 	"Player.hpp"
 
-1763511375 source:e:\codeblocks\proyectopoo\duelft\src\main.cpp
-	<SFML/Graphics.hpp>
+1764041873 source:e:\codeblocks\proyectopoo\duelft\src\main.cpp
 	"Game.hpp"
 
 1763426445 e:\codeblocks\proyectopoo\sfml-2.6.1\include\sfml\graphics.hpp
@@ -951,20 +954,19 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1763511108 e:\codeblocks\proyectopoo\duelft\include\board.hpp
-	"Card.hpp"
+1763829655 e:\codeblocks\proyectopoo\duelft\include\board.hpp
 
-1763424084 e:\codeblocks\proyectopoo\duelft\include\card.hpp
-	<string>
+1764032447 e:\codeblocks\proyectopoo\duelft\include\card.hpp
+	<SFML/Graphics.hpp>
 
-1763426072 e:\codeblocks\proyectopoo\duelft\include\player.hpp
+1763829655 e:\codeblocks\proyectopoo\duelft\include\player.hpp
 	<string>
 	<vector>
 	"Card.hpp"
 
-1763512678 e:\codeblocks\proyectopoo\duelft\include\game.hpp
-	"Player.hpp"
+1764032447 e:\codeblocks\proyectopoo\duelft\include\game.hpp
 	"Board.hpp"
+	"Card.hpp"
 	<SFML/Graphics.hpp>
 
 1763784208 source:c:\users\user\proyectopoo\duelft\src\board.cpp
