@@ -256,6 +256,8 @@ void Game::draw(){
     sf::Color gridLineColor(60, 60, 60);
     sf::Color player1Color(100, 150, 255);
     sf::Color player2Color(255, 100, 100);
+
+
     window.clear(backgroundColor);
 
         // ESPACIO IZQUIERDO

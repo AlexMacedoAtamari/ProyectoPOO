@@ -521,7 +521,7 @@
 	"Card.hpp"
 	<SFML/Graphics.hpp>
 
-1764041790 source:e:\codeblocks\proyectopoo\duelft\src\game.cpp
+1764084193 source:e:\codeblocks\proyectopoo\duelft\src\game.cpp
 	"Game.hpp"
 	"Board.hpp"
 	<SFML/Graphics.hpp>
