@@ -131,13 +131,6 @@ void Game::loadPiratas(){
         // Escalamos los sprite para conveniencia del tablero
         p.spPiratas.setScale(w, h);
 
-        // Calculamos fila y columna
-        int fila = i / colum;
-        int col  = i % colum;
-
-        // Asignamos posición
-        p.spPiratas.setPosition(startX + col * spaceX, startY + fila * spaceY);
-
         // Guardamos sprite en un vector definido
         piratasSprites.push_back(p.spPiratas);
     }
