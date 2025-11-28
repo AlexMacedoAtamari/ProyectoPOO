@@ -30,9 +30,19 @@ private:
     vector<Texture> piratasTextures;
     vector<Sprite> piratasSprites;
 
+    // Textura de los fondos
+    Texture textFonNin;
+    Texture textFonPir;
+
+    // Sprite de los fondos
+    Sprite spFondNin;
+    Sprite spFondPir;
+
+
     // Método para cargar los archivos
     void loadNinjas();
     void loadPiratas();
+    void loadFondo();
 
 public:
     Game();

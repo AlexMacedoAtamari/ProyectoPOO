@@ -13,6 +13,7 @@ public:
     static const int COLUMNAS = 6;
 
 private:
+
     Cell celdas[FILAS][COLUMNAS];
 
 public:
