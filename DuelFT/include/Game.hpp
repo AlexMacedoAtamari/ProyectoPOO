@@ -38,11 +38,22 @@ private:
     Sprite spFondNin;
     Sprite spFondPir;
 
-
     // Método para cargar los archivos
     void loadNinjas();
     void loadPiratas();
     void loadFondo();
+    void loadFuente();
+
+    // Inicio de la carta actual por jugador
+    int cartaActualJugador1 = 0;
+    int cartaActualJugador2 = 0;
+
+    // Para cartas que ya se usaron
+    int indiceInicioNinjas = 0;
+    int indiceInicioPiratas = 0;
+
+    Font fuente;
+
 
 public:
     Game();

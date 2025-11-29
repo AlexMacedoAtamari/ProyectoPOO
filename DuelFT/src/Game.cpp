@@ -47,6 +47,7 @@ void Game::load(){
     loadNinjas();
     loadPiratas();
     loadFondo();
+    loadFuente();
 }
 
 void Game::loadNinjas(){
@@ -164,6 +165,10 @@ void Game::loadFondo(){
     spFondPir.setPosition(0,492);
 }
 
+void Game::loadFuente(){
+    fuente.loadFromFile("fuentes/arial.ttf");
+}
+
 void Game::run(){
 
     while (window.isOpen())
@@ -190,9 +195,6 @@ void Game::handlePlayerInput(){
     Event event;
     while (window.pollEvent(event))
     {
-        if (event.type == Event::Closed)
-            window.close();
-
         if (event.type == Event::MouseButtonPressed &&
             event.mouseButton.button == Mouse::Left)
         {
@@ -207,24 +209,39 @@ void Game::handlePlayerInput(){
                 int row = (mouseY - OFFSET_Y) / CELL_HEIGHT;
                 if (col >= 0 && col < 6 && row >= 0 && row < 6)
                 {
+
+
+                    int id = (getTurno() == 1) ? cartaActualJugador1 : cartaActualJugador2;
+
                     // colocar carta usando tus funciones reales
                     bool colocado = getBoard().colocarCarta(
                         row,
                         col,
-                        1,                // id carta dummy
+                        id,                // id carta dummy
                         getTurno()   // jugador actual
                     );
 
                     if (colocado)
                     {
                         cout << "Colocada en (" << row << ", " << col
-                                  << ") por jugador " << getTurno() << "\n";
+                            << ") por jugador " << getTurno() << "\n";
+
+                        if (getTurno() == 1) {
+                            cartaActualJugador1++;
+                            indiceInicioNinjas++;
+                        }
+                        else {
+                            cartaActualJugador2++;
+                            indiceInicioPiratas++;
+                        }
 
                         cambiarTurno();
                     }
                 }
             }
         }
+        if (event.type == Event::Closed)
+            window.close();
     }
 }
 
@@ -273,21 +290,26 @@ void Game::draw(){
             // obtener celda real (tus clases)
             Cell currentCell = getBoard().getCell(row, col);
 
-            if (currentCell.ocupada)
+
+            if (currentCell.ocupada&&currentCell.jugador==1)
             {
-                CircleShape token(50.f);
-                token.setPosition(
-                    OFFSET_X + col * CELL_WIDTH + 20,
-                    OFFSET_Y + row * CELL_HEIGHT + 40
+                ninjasSprites[currentCell.idCarta].setPosition(
+                    OFFSET_X + col * CELL_WIDTH,
+                    OFFSET_Y + row * CELL_HEIGHT
                 );
+                window.draw(ninjasSprites[currentCell.idCarta]);
 
-                if (currentCell.jugador == 1)
-                    token.setFillColor(player1Color);
-                else
-                    token.setFillColor(player2Color);
-
-                window.draw(token);
             }
+            else if (currentCell.ocupada&&currentCell.jugador==2)
+            {
+                piratasSprites[currentCell.idCarta].setPosition(
+                    OFFSET_X + col * CELL_WIDTH,
+                    OFFSET_Y + row * CELL_HEIGHT
+                );
+                window.draw(piratasSprites[currentCell.idCarta]);
+
+            }
+
         }
     }
 
@@ -308,18 +330,81 @@ void Game::draw(){
     panelInferior.setFillColor(panelInferiorColor);
     //window.draw(panelInferior);
 
+    //
+
     // Dibuja una cantidad específica de cartas (Ninjas)
-    int cantidadNinjas = 6;
+    /*int cantidadNinjas = 6;
     for (int i = 0; i < cantidadNinjas && i < ninjasSprites.size(); i++) {
         window.draw(ninjasSprites[i]);
+    }*/
+
+    // Dibujando cartas del mazo disponible
+    int cantidadNinjas = 6;
+    int colum = 3;
+    int spaceX = 160;
+    int spaceY = 160;
+    float startX = 1350.0f;
+    float startY = 100.0f;
+
+    for (int i = 0; i < cantidadNinjas && (indiceInicioNinjas + i) < ninjasSprites.size(); i++) {
+        int fila = i / colum;
+        int col = i % colum;
+        ninjasSprites[indiceInicioNinjas + i].setPosition(
+            startX + col * spaceX,
+            startY + fila * spaceY
+        );
+        window.draw(ninjasSprites[indiceInicioNinjas + i]);
+    }
+
+    // Dibujando frase "Proximo Ninja"
+    if (getTurno() == 1 && indiceInicioNinjas < ninjasSprites.size()) {
+        Text textoProximaNinja;
+        textoProximaNinja.setFont(fuente);
+        textoProximaNinja.setString("PROXIMO NINJA");
+        textoProximaNinja.setCharacterSize(20);
+        textoProximaNinja.setFillColor(Color::Green);
+        textoProximaNinja.setStyle(Text::Bold);
+
+        // Posición simple: justo arriba de donde empieza el grid
+        textoProximaNinja.setPosition(startX, startY - 40);
+
+        window.draw(textoProximaNinja);
     }
 
     // Dibuja una cantidad específica de cartas (Piratas)
-    int cantidadPiratas = 6;
+    /*int cantidadPiratas = 6;
     for (int i = 0; i < cantidadPiratas && i < piratasSprites.size(); i++) {
         window.draw(piratasSprites[i]);
+    }*/
+
+    // Dibujando cartas del mazo disponible
+    int cantidadPiratas = 6;
+    float startXPir = 1350.0f;
+    float startYPir = 580.0f;
+
+    for (int i = 0; i < cantidadPiratas && (indiceInicioPiratas + i) < piratasSprites.size(); i++) {
+        int fila = i / colum;
+        int col = i % colum;
+        piratasSprites[indiceInicioPiratas + i].setPosition(
+            startXPir + col * spaceX,
+            startYPir + fila * spaceY
+        );
+        window.draw(piratasSprites[indiceInicioPiratas + i]);
     }
 
+    // Dibujando frase "Proximo Pirata"
+    if (getTurno() == 2 && indiceInicioPiratas < piratasSprites.size()) {
+        Text textoProximaPirata;
+        textoProximaPirata.setFont(fuente);
+        textoProximaPirata.setString("PROXIMO PIRATA");
+        textoProximaPirata.setCharacterSize(20);
+        textoProximaPirata.setFillColor(Color::Green);
+        textoProximaPirata.setStyle(Text::Bold);
+
+        textoProximaPirata.setPosition(startXPir, startYPir - 40);
+
+        window.draw(textoProximaPirata);
+    }
 }
 
 void Game::update(){

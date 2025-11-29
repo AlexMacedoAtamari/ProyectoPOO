@@ -521,7 +521,7 @@
 	"Card.hpp"
 	<SFML/Graphics.hpp>
 
-1764371622 source:e:\codeblocks\proyectopoo\duelft\src\game.cpp
+1764385027 source:e:\codeblocks\proyectopoo\duelft\src\game.cpp
 	"Game.hpp"
 	"Board.hpp"
 	<SFML/Graphics.hpp>
@@ -954,7 +954,7 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1764357578 e:\codeblocks\proyectopoo\duelft\include\board.hpp
+1764378062 e:\codeblocks\proyectopoo\duelft\include\board.hpp
 
 1764370828 e:\codeblocks\proyectopoo\duelft\include\card.hpp
 	<SFML/Graphics.hpp>
@@ -964,7 +964,7 @@
 	<vector>
 	"Card.hpp"
 
-1764365870 e:\codeblocks\proyectopoo\duelft\include\game.hpp
+1764384760 e:\codeblocks\proyectopoo\duelft\include\game.hpp
 	"Board.hpp"
 	"Card.hpp"
 	<SFML/Graphics.hpp>
