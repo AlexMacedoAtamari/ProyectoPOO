@@ -1,0 +1,12 @@
+# Ignorar SFML
+SFML-2.6.1/
+SFML/
+SFML-3.0.2/
+
+# Ignorar compilados
+bin/
+obj/
+
+# Ignorar ejecutables
+*.exe
+
