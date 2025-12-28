@@ -3,21 +3,28 @@
 
 #include <string>
 
-struct CardData {
+using namespace std;
 
-    std::string name;
+class CardData {
+public:
+
+    string name;
 
     int north;
     int south;
     int east;
     int west;
 
-    std::string type;
+    string type;
     int coins;
-    std::string attribute;
-    std::string effect;
+    string attribute;
+    string effect;
 
     int id;
+
+    // Para el conteo final
+    int endvalor;
+
 };
 
 #endif

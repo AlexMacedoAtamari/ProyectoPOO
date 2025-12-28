@@ -4,6 +4,8 @@
 #include <vector>
 #include "CardData.hpp"
 
+using namespace std;
+
 // ---------------------------------------------------------------------------
 // CardManager
 //
@@ -19,9 +21,9 @@ class CardManager {
 
 public:
 
-    // Listas donde guardaré todas las cartas
-    std::vector<CardData> ninjas;
-    std::vector<CardData> piratas;
+    // Listas donde se guardan las cartas
+    vector<CardData> ninjas;
+    vector<CardData> piratas;
 
     // Constructor: al crear un CardManager se cargan las cartas
     CardManager();
@@ -33,6 +35,7 @@ public:
     // Funciones para obtener una carta por ID
     CardData& getNinja(int id);
     CardData& getPirata(int id);
+
 };
 
 #endif

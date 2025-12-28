@@ -34,6 +34,7 @@ void CardManager::loadNinjas() {
     c.north = 3; c.south = 2; c.east = 2; c.west = 1;
     c.type = "Apoyo";
     c.coins = 0;
+    c.endvalor = 1;
     c.attribute = "Bandera Marron/Amarilla con X";
     c.effect = "Si gana un enfrentamiento obtienes +1 moneda.";
     // Explicación futura:
@@ -48,6 +49,7 @@ void CardManager::loadNinjas() {
     c.north = 1; c.south = 2; c.east = 2; c.west = 3;
     c.type = "Apoyo";
     c.coins = 0;
+    c.endvalor = 1;
     c.attribute = "Bandera Marron/Amarilla con X";
     c.effect = "Si gana un enfrentamiento obtienes +1 moneda.";
     ninjas.push_back(c);
@@ -60,6 +62,7 @@ void CardManager::loadNinjas() {
     c.north = 1; c.south = 2; c.east = 3; c.west = 2;
     c.type = "Apoyo";
     c.coins = 0;
+    c.endvalor = 1;
     c.attribute = "Bandera Marron/Amarilla con X";
     c.effect = "Si gana un enfrentamiento obtienes +1 moneda.";
     ninjas.push_back(c);
@@ -68,12 +71,13 @@ void CardManager::loadNinjas() {
     // NINJA 4
     // ==========================================================
     c.id = 3;
-    c.name = "NINJA APRENDIZ";
-    c.north = 2; c.south = 3; c.east = 1; c.west = 2;
+    c.name = "MERODEADOR";
+    c.north = 2; c.south = 1; c.east = 2; c.west = 3;
     c.type = "Apoyo";
     c.coins = 0;
+    c.endvalor = 1;
     c.attribute = "Bandera Marron/Amarilla con X";
-    c.effect = "Si gana un enfrentamiento obtienes +1 moneda.";
+    c.effect = "Gana +1 moneda si lo colocas en un sitio neutral";
     ninjas.push_back(c);
 
     // ==========================================================
@@ -84,6 +88,7 @@ void CardManager::loadNinjas() {
     c.north = 1; c.south = 3; c.east = 2; c.west = 2;
     c.type = "Apoyo";
     c.coins = 0;
+    c.endvalor = 1;
     c.attribute = "Bandera Marron/Amarilla con X";
     c.effect = "Gana +1 moneda si lo colocas en un sitio neutral.";
     // Explicación:
@@ -98,6 +103,7 @@ void CardManager::loadNinjas() {
     c.north = 2; c.south = 3; c.east = 1; c.west = 2;
     c.type = "Apoyo";
     c.coins = 0;
+    c.endvalor = 1;
     c.attribute = "Bandera Marron/Amarilla con X";
     c.effect = "Gana +1 moneda si lo colocas en un sitio neutral.";
     ninjas.push_back(c);
@@ -110,6 +116,7 @@ void CardManager::loadNinjas() {
     c.north = 1; c.south = 1; c.east = 2; c.west = 4;
     c.type = "Apoyo";
     c.coins = 0;
+    c.endvalor = 1;
     c.attribute = "Bandera Marron/Amarilla con X";
     c.effect = "Roba +1 moneda a tu oponente si ganas un enfrentamiento.";
     // Explicación:
@@ -124,6 +131,7 @@ void CardManager::loadNinjas() {
     c.north = 4; c.south = 1; c.east = 2; c.west = 1;
     c.type = "Apoyo";
     c.coins = 0;
+    c.endvalor = 1;
     c.attribute = "Bandera Marron/Amarilla con X";
     c.effect = "Roba +1 moneda a tu oponente si ganas un enfrentamiento.";
     ninjas.push_back(c);
@@ -136,6 +144,7 @@ void CardManager::loadNinjas() {
     c.north = 1; c.south = 4; c.east = 1; c.west = 2;
     c.type = "Apoyo";
     c.coins = 0;
+    c.endvalor = 1;
     c.attribute = "Bandera Marron/Amarilla con X";
     c.effect = "Roba +1 moneda a tu oponente si ganas un enfrentamiento.";
     ninjas.push_back(c);
@@ -148,6 +157,7 @@ void CardManager::loadNinjas() {
     c.north = 5; c.south = 2; c.east = 1; c.west = 4;
     c.type = "Ataque";
     c.coins = +2;
+    c.endvalor = 2;
     c.attribute = "Triangulo Amarillo";
     c.effect = "Si ganas un enfrentamiento, conviertes a otra ficha adyacente automaticamente.";
     ninjas.push_back(c);
@@ -160,6 +170,7 @@ void CardManager::loadNinjas() {
     c.north = 2; c.south = 4; c.east = 5; c.west = 1;
     c.type = "Ataque";
     c.coins = +2;
+    c.endvalor = 2;
     c.attribute = "Triangulo Amarillo";
     c.effect = "Si ganas un enfrentamiento, conviertes a otra ficha adyacente automaticamente.";
     ninjas.push_back(c);
@@ -172,6 +183,7 @@ void CardManager::loadNinjas() {
     c.north = 3; c.south = 3; c.east = 4; c.west = 2;
     c.type = "Ataque";
     c.coins = 0;
+    c.endvalor = 2;
     c.attribute = "Triangulo Amarillo";
     c.effect = "La ficha convertida obtiene -1 en todos sus lados por 1 turno.";
     ninjas.push_back(c);
@@ -184,6 +196,7 @@ void CardManager::loadNinjas() {
     c.north = 4; c.south = 2; c.east = 3; c.west = 3;
     c.type = "Ataque";
     c.coins = 0;
+    c.endvalor = 2;
     c.attribute = "Triangulo Amarillo";
     c.effect = "La ficha convertida obtiene -1 en todos sus lados por 1 turno.";
     ninjas.push_back(c);
@@ -196,6 +209,7 @@ void CardManager::loadNinjas() {
     c.north = 4; c.south = 2; c.east = 4; c.west = 2;
     c.type = "Ataque";
     c.coins = +2;
+    c.endvalor = 2;
     c.attribute = "Triangulo Amarillo";
     c.effect = "Puede colocarse como una ficha del bando enemigo hasta que la reveles.";
     ninjas.push_back(c);
@@ -208,6 +222,7 @@ void CardManager::loadNinjas() {
     c.north = 2; c.south = 4; c.east = 2; c.west = 4;
     c.type = "Ataque";
     c.coins = +2;
+    c.endvalor = 2;
     c.attribute = "Triangulo Amarillo";
     c.effect = "Puede colocarse como una ficha del bando enemigo hasta que la reveles.";
     ninjas.push_back(c);
@@ -220,6 +235,7 @@ void CardManager::loadNinjas() {
     c.north = 3; c.south = 3; c.east = 4; c.west = 2;
     c.type = "Ataque";
     c.coins = +3;
+    c.endvalor = 3;
     c.attribute = "Estrella Amarilla";
     c.effect = "Intercambia esta ficha con cualquier otra aliada en el tablero.";
     ninjas.push_back(c);
@@ -232,6 +248,7 @@ void CardManager::loadNinjas() {
     c.north = 1; c.south = 1; c.east = 5; c.west = 5;
     c.type = "Apoyo";
     c.coins = +3;
+    c.endvalor = 3;
     c.attribute = "Estrella Amarilla";
     c.effect = "Bloquea conversiones enemigas en casillas adyacentes.";
     ninjas.push_back(c);
@@ -244,6 +261,7 @@ void CardManager::loadNinjas() {
     c.north = 5; c.south = 5; c.east = 1; c.west = 2;
     c.type = "Ataque";
     c.coins = +3;
+    c.endvalor = 3;
     c.attribute = "Estrella Amarilla";
     c.effect = "Toma control de una ficha enemiga 1 turno.";
     ninjas.push_back(c);
@@ -256,6 +274,7 @@ void CardManager::loadNinjas() {
     c.north = 3; c.south = 3; c.east = 2; c.west = 4;
     c.type = "Apoyo";
     c.coins = +1;
+    c.endvalor = 3;
     c.attribute = "Estrella Amarilla";
     c.effect = "Desactiva habilidades en casillas adyacentes por 1 turno.";
     ninjas.push_back(c);
@@ -280,7 +299,8 @@ void CardManager::loadPiratas() {
     c.north = 3; c.south = 2; c.east = 2; c.west = 1;
     c.type = "Apoyo";
     c.coins = 0;
-    c.attribute = "";
+    c.endvalor = 1;
+    c.attribute = "Bandera Roja/Amarilla con X";
     c.effect = "Si gana un enfrentamiento obtienes +2 monedas.";
     piratas.push_back(c);
 
@@ -290,7 +310,8 @@ void CardManager::loadPiratas() {
     c.north = 1; c.south = 2; c.east = 2; c.west = 3;
     c.type = "Apoyo";
     c.coins = 0;
-    c.attribute = "";
+    c.endvalor = 1;
+    c.attribute = "Bandera Roja/Amarilla con X";
     c.effect = "Si gana un enfrentamiento obtienes +2 monedas.";
     piratas.push_back(c);
 
@@ -300,7 +321,8 @@ void CardManager::loadPiratas() {
     c.north = 1; c.south = 2; c.east = 3; c.west = 2;
     c.type = "Apoyo";
     c.coins = 0;
-    c.attribute = "";
+    c.endvalor = 1;
+    c.attribute = "Bandera Roja/Amarilla con X";
     c.effect = "Si gana un enfrentamiento obtienes +2 monedas.";
     piratas.push_back(c);
 
@@ -310,7 +332,8 @@ void CardManager::loadPiratas() {
     c.north = 2; c.south = 1; c.east = 2; c.west = 3;
     c.type = "Apoyo";
     c.coins = 0;
-    c.attribute = "";
+    c.endvalor = 1;
+    c.attribute = "Bandera Roja/Amarilla con X";
     c.effect = "Gana +1 a la izquierda si se coloca junto a un aliado.";
     piratas.push_back(c);
 
@@ -320,7 +343,8 @@ void CardManager::loadPiratas() {
     c.north = 1; c.south = 3; c.east = 2; c.west = 2;
     c.type = "Apoyo";
     c.coins = 0;
-    c.attribute = "";
+    c.endvalor = 1;
+    c.attribute = "Bandera Roja/Amarilla con X";
     c.effect = "Gana +1 a la izquierda si se coloca junto a un aliado.";
     piratas.push_back(c);
 
@@ -330,7 +354,8 @@ void CardManager::loadPiratas() {
     c.north = 3; c.south = 2; c.east = 1; c.west = 2;
     c.type = "Apoyo";
     c.coins = 0;
-    c.attribute = "";
+    c.endvalor = 1;
+    c.attribute = "Bandera Roja/Amarilla con X";
     c.effect = "Gana +1 a la izquierda si se coloca junto a un aliado.";
     piratas.push_back(c);
 
@@ -340,7 +365,8 @@ void CardManager::loadPiratas() {
     c.north = 1; c.south = 1; c.east = 2; c.west = 4;
     c.type = "Apoyo";
     c.coins = 0;
-    c.attribute = "";
+    c.endvalor = 1;
+    c.attribute = "Bandera Roja/Amarilla con X";
     c.effect = "Refuerza +1 a una ficha aliada adyacente.";
     piratas.push_back(c);
 
@@ -350,7 +376,8 @@ void CardManager::loadPiratas() {
     c.north = 4; c.south = 1; c.east = 2; c.west = 1;
     c.type = "Apoyo";
     c.coins = 0;
-    c.attribute = "";
+    c.endvalor = 1;
+    c.attribute = "Bandera Roja/Amarilla con X";
     c.effect = "Refuerza +1 a una ficha aliada adyacente.";
     piratas.push_back(c);
 
@@ -360,28 +387,31 @@ void CardManager::loadPiratas() {
     c.north = 1; c.south = 4; c.east = 1; c.west = 2;
     c.type = "Apoyo";
     c.coins = 0;
-    c.attribute = "";
+    c.endvalor = 1;
+    c.attribute = "Bandera Roja/Amarilla con X";
     c.effect = "Refuerza +1 a una ficha aliada adyacente.";
     piratas.push_back(c);
 
     // PIRATA 10 – CAÑONERO
     c.id = 9;
     c.name = "CAÑONERO";
-    c.north = 0; c.south = 3; c.east = 4; c.west = 5;
+    c.north = 5; c.south = 0; c.east = 3; c.west = 4;
     c.type = "Ataque";
     c.coins = +1;
+    c.endvalor = 2;
     c.attribute = "Triangulo Rojo";
     c.effect = "Inflige -2 al lado más alto de una ficha enemiga adyacente.";
     piratas.push_back(c);
 
-    // PIRATA 11 – BUCANERO
+    // PIRATA 11 – CAÑONERO
     c.id = 10;
-    c.name = "BUCANERO";
-    c.north = 3; c.south = 3; c.east = 3; c.west = 3;
+    c.name = "CAÑONERO";
+    c.north = 0; c.south = 3; c.east = 4; c.west = 5;
     c.type = "Ataque";
     c.coins = +1;
+    c.endvalor = 2;
     c.attribute = "Triangulo Rojo";
-    c.effect = "Si se coloca en casilla neutral obtiene +2 arriba y abajo.";
+    c.effect = "Inflige -2 al lado más alto de una ficha enemiga adyacente.";
     piratas.push_back(c);
 
     // PIRATA 12 – BUCANERO
@@ -390,79 +420,88 @@ void CardManager::loadPiratas() {
     c.north = 3; c.south = 3; c.east = 3; c.west = 3;
     c.type = "Ataque";
     c.coins = +1;
+    c.endvalor = 2;
     c.attribute = "Triangulo Rojo";
     c.effect = "Si se coloca en casilla neutral obtiene +2 arriba y abajo.";
     piratas.push_back(c);
 
-    // PIRATA 13 – TIBURON NEGRO
+    // PIRATA 13 – BUCANERO
     c.id = 12;
-    c.name = "TIBURON NEGRO";
-    c.north = 5; c.south = 2; c.east = 4; c.west = 1;
+    c.name = "BUCANERO";
+    c.north = 3; c.south = 3; c.east = 3; c.west = 3;
     c.type = "Ataque";
-    c.coins = +2;
+    c.coins = +1;
+    c.endvalor = 2;
     c.attribute = "Triangulo Rojo";
-    c.effect = "Se desplaza 1 casilla al vencer, atacando de nuevo.";
+    c.effect = "Si se coloca en casilla neutral obtiene +2 arriba y abajo.";
     piratas.push_back(c);
 
     // PIRATA 14 – CONTRAMAESTRE
     c.id = 13;
     c.name = "CONTRAMAESTRE";
-    c.north = 2; c.south = 4; c.east = 2; c.west = 4;
+    c.north = 4; c.south = 2; c.east = 4; c.west = 2;
     c.type = "Ataque";
     c.coins = +2;
+    c.endvalor = 2;
     c.attribute = "Triangulo Rojo";
     c.effect = "Las fichas piratas adyacentes ganan +2 por un turno.";
     piratas.push_back(c);
 
-    // PIRATA 15 – BRUTO DEL MAR
+    // PIRATA 15 – CONTRAMAESTRE
     c.id = 14;
+    c.name = "CONTRAMAESTRE";
+    c.north = 2; c.south = 4; c.east = 2; c.west = 4;
+    c.type = "Ataque";
+    c.coins = +2;
+    c.endvalor = 2;
+    c.attribute = "Triangulo Rojo";
+    c.effect = "Las fichas piratas adyacentes ganan +2 por un turno.";
+    piratas.push_back(c);
+
+    // PIRATA 16 – BRUTO DEL MAR
+    c.id = 15;
     c.name = "BRUTO DEL MAR";
     c.north = 6; c.south = 1; c.east = 3; c.west = 2;
     c.type = "Ataque";
     c.coins = +3;
+    c.endvalor = 3;
     c.attribute = "Estrella Amarilla";
     c.effect = "Si convierte una ficha enemiga, puede moverla y atacar de nuevo.";
     piratas.push_back(c);
 
-    // PIRATA 16 – SABIO PIRATA
-    c.id = 15;
+    // PIRATA 17 – SABIO PIRATA
+    c.id = 16;
     c.name = "SABIO PIRATA";
     c.north = 1; c.south = 1; c.east = 5; c.west = 5;
     c.type = "Apoyo";
     c.coins = +1;
+    c.endvalor = 3;
     c.attribute = "Estrella Amarilla";
     c.effect = "Puedes vender una ficha de tu mano para ganar +3 monedas.";
     piratas.push_back(c);
 
-    // PIRATA 17 – CAPITAN FEROZ
-    c.id = 16;
+    // PIRATA 18 – CAPITAN FEROZ
+    c.id = 17;
     c.name = "CAPITAN FEROZ";
     c.north = 2; c.south = 5; c.east = 1; c.west = 4;
     c.type = "Ataque";
     c.coins = +3;
+    c.endvalor = 3;
     c.attribute = "Estrella Amarilla";
     c.effect = "Al convertir una ficha convierte también la siguiente.";
     piratas.push_back(c);
 
-    // PIRATA 18 – COMPAÑERO LEAL
-    c.id = 17;
+    // PIRATA 19 – COMPAÑERO LEAL
+    c.id = 18;
     c.name = "COMPAÑERO LEAL";
     c.north = 2; c.south = 3; c.east = 6; c.west = 2;
     c.type = "Apoyo";
     c.coins = +3;
+    c.endvalor = 3;
     c.attribute = "Estrella Amarilla";
     c.effect = "Puedes pagar su habilidad para reemplazar una ficha aliada por esta.";
     piratas.push_back(c);
 
-    // PIRATA 19 – (la última)
-    c.id = 18;
-    c.name = "SIRENA ROJA";
-    c.north = 3; c.south = 6; c.east = 2; c.west = 4;
-    c.type = "Apoyo";
-    c.coins = +3;
-    c.attribute = "Estrella Amarilla";
-    c.effect = "Desactiva habilidades enemigas en 2 casillas de distancia.";
-    piratas.push_back(c);
 }
 
 

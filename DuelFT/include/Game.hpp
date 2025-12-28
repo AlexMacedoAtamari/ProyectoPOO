@@ -3,6 +3,7 @@
 
 #include "Board.hpp"
 #include "Card.hpp"
+#include "CardManager.hpp"
 #include <SFML/Graphics.hpp>
 
 using namespace sf;
@@ -54,11 +55,72 @@ private:
 
     Font fuente;
 
+    CardManager cardManager;
+
+    // Comprobar los vecinos
+    class Pos {
+    public:
+        int fila;
+        int columna;
+
+        Pos(int f, int c) : fila(f), columna(c) {}
+    };
+    vector<Pos> detectarVecinosOrtogonales(int fila, int columna);
+
+    /*// Usando getCardData según cada jugador
+    CardData& getCardData(int jugador, int idCarta);*/
+
+    // Usando getCardData según cada jugador por tipo
+    CardData& getCardDataPorTipo(int tipoCarta, int idCarta);
+
+    // Comparación de los atributos de las cartas
+    bool compararAtributos(
+        int filaCentral,
+        int columnaCentral,
+        int filaVecino,
+        int columnaVecino
+    );
+
+    // Método para convertir cartas
+    void convertirCartasAdyacentes(int fila, int columna);
+
+    Text textoJugador;
+
+    vector<int> ordenNinjas;
+    vector<int> ordenPiratas;
+
+    int calcularPuntajeJugador(int jugador);
+
+    bool finPartida = false;
+    int puntajeP1 = 0;
+    int puntajeP2 = 0;
+
+    bool tableroLleno();
+
+    bool mostrarOverlayFinal;
+    RectangleShape botonResultados;
+    Text textoBotonResultados;
+
+    // Boton para regresar a la pantalla de victoria
+    RectangleShape botonVolverFinal;
+    Text textoBotonVolverFinal;
+
+    // Boton para crear nueva partida
+    RectangleShape botonNuevaPartida;
+    Text textoBotonNuevaPartida;
+
+    // Boton para salir del juego
+    RectangleShape botonSalir;
+    Text textoBotonSalir;
+
+    void reiniciarJuego();
+
 
 public:
     Game();
 
     Board& getBoard();
+
     int getTurno() const;
     void cambiarTurno();
 
@@ -69,6 +131,7 @@ public:
     void handlePlayerInput();
     void draw();
     void update();
+
 
 };
 
