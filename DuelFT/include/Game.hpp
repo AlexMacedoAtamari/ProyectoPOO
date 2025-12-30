@@ -4,6 +4,7 @@
 #include "Board.hpp"
 #include "Card.hpp"
 #include "CardManager.hpp"
+#include "Pos.hpp"
 #include <SFML/Graphics.hpp>
 
 using namespace sf;
@@ -57,18 +58,7 @@ private:
 
     CardManager cardManager;
 
-    // Comprobar los vecinos
-    class Pos {
-    public:
-        int fila;
-        int columna;
-
-        Pos(int f, int c) : fila(f), columna(c) {}
-    };
     vector<Pos> detectarVecinosOrtogonales(int fila, int columna);
-
-    /*// Usando getCardData según cada jugador
-    CardData& getCardData(int jugador, int idCarta);*/
 
     // Usando getCardData según cada jugador por tipo
     CardData& getCardDataPorTipo(int tipoCarta, int idCarta);

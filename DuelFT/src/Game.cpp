@@ -1,6 +1,4 @@
 #include "Game.hpp"
-#include "Board.hpp"
-#include "CardManager.hpp"
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <algorithm>
@@ -96,18 +94,8 @@ void Game::loadNinjas(){
     for (int i = 0; i < ninjas_all; i++)
         ordenNinjas.push_back(i);
 
-    random_shuffle(ordenNinjas.begin(), ordenNinjas.end());
-
-
-    // Para hacer aleatorio las cartas mostradas
     // random_shuffle(ninjasSprites.begin(), ninjasSprites.end());
-    for (int i = 0; i < ninjasSprites.size(); i++) {
-        // Calculamos fila y columna
-        int fila = i / colum;
-        int col = i % colum;
-        // Asignamos posición de la carta inicial
-        ninjasSprites[i].setPosition(startX + col * spaceX, startY + fila * spaceY);
-    }
+    random_shuffle(ordenNinjas.begin(), ordenNinjas.end());
 }
 
 void Game::loadPiratas(){
@@ -153,35 +141,21 @@ void Game::loadPiratas(){
     for (int i = 0; i < piratas_all; i++)
         ordenPiratas.push_back(i);
 
-    random_shuffle(ordenPiratas.begin(), ordenPiratas.end());
-
-
     // Para hacer aleatorio las cartas mostradas
-    // random_shuffle(piratasSprites.begin(), piratasSprites.end());
-    for (int i = 0; i < piratasSprites.size(); i++) {
-        // Calculamos fila y columna
-        int fila = i / colum;
-        int col = i % colum;
-        // Asignamos posición de la carta inicial
-        piratasSprites[i].setPosition(startX + col * spaceX, startY + fila * spaceY);
-    }
+    random_shuffle(ordenPiratas.begin(), ordenPiratas.end());
 }
 
 void Game::loadFondo(){
     // Carga de textura para el sprite del fondo (Ninja)
     textFonNin.loadFromFile("imagenes/Fondos/FondNinja.jpg");
-    //textFonNin.setSmooth(true);
     spFondNin.setTexture(textFonNin);
     spFondNin.setTextureRect(IntRect(0,340,1920,1080));
-    //spFondNin.setScale(2.7f,2.7f);
     spFondNin.setPosition(0,0);
 
     // Carga de textura para el sprite del fondo (Pirata)
     textFonPir.loadFromFile("imagenes/Fondos/FondPirata.jpg");
-    //textFonNin.setSmooth(true);
     spFondPir.setTexture(textFonPir);
     spFondPir.setTextureRect(IntRect(0,700,1920,1080));
-    //spFondPir.setScale(2.7f,2.7f);
     spFondPir.setPosition(0,492);
 }
 
@@ -403,9 +377,9 @@ void Game::handlePlayerInput(){
     }
 }
 
-vector<Game::Pos> Game::detectarVecinosOrtogonales(int fila, int columna)
+vector<Pos> Game::detectarVecinosOrtogonales(int fila, int columna)
 {
-    std::vector<Pos> vecinos;
+    vector<Pos> vecinos;
 
     // ARRIBA (N)
     if (fila > 0 && board.estaOcupada(fila - 1, columna))
@@ -496,7 +470,7 @@ void Game::convertirCartasAdyacentes(int fila, int columna)
         }
     }
 
-    // === CONVERSIÓN SIMULTÁNEA ===
+    // CONVERSIÓN SIMULTÁNEA
     for (auto& pos : aConvertir)
     {
         board.cambiarJugador(
@@ -646,7 +620,7 @@ void Game::draw(){
 
                 textoJugador.setPosition(posTexto);
 
-                // ===== FONDO OSCURO TRANSPARENTE =====
+                // FONDO OSCURO TRANSPARENTE
                 RectangleShape fondoJugador;
                 fondoJugador.setSize(Vector2f(
                     bounds.width + 12,
@@ -665,7 +639,7 @@ void Game::draw(){
 
                 fondoJugador.setFillColor(Color(0, 0, 0, 150)); // Negro semi-transparente
 
-                // ===== DIBUJO (orden importante) =====
+                // DIBUJO (orden importante)
                 window.draw(fondoJugador);
                 window.draw(textoJugador);
 
@@ -702,7 +676,7 @@ void Game::draw(){
 
                     textoValor.setPosition(centroCarta);
 
-                    // ===== FONDO OSCURO TRANSPARENTE =====
+                    // FONDO OSCURO TRANSPARENTE
                     RectangleShape fondoTexto;
                     fondoTexto.setSize(Vector2f(
                         textBounds.width  + 20,
@@ -717,7 +691,7 @@ void Game::draw(){
                     fondoTexto.setPosition(centroCarta);
                     fondoTexto.setFillColor(Color(0, 0, 0, 160)); // Negro semi-transparente
 
-                    // ===== DIBUJO (orden IMPORTANTE) =====
+                    // DIBUJO (orden IMPORTANTE)
                     window.draw(fondoTexto);
                     window.draw(textoValor);
                 }

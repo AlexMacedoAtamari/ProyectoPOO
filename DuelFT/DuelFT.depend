@@ -521,10 +521,8 @@
 	"Card.hpp"
 	<SFML/Graphics.hpp>
 
-1766882098 source:e:\codeblocks\proyectopoo\duelft\src\game.cpp
+1767058432 source:e:\codeblocks\proyectopoo\duelft\src\game.cpp
 	"Game.hpp"
-	"Board.hpp"
-	"CardManager.hpp"
 	<SFML/Graphics.hpp>
 	<iostream>
 	<algorithm>
@@ -964,10 +962,11 @@
 	<vector>
 	"Card.hpp"
 
-1766882098 e:\codeblocks\proyectopoo\duelft\include\game.hpp
+1767058295 e:\codeblocks\proyectopoo\duelft\include\game.hpp
 	"Board.hpp"
 	"Card.hpp"
 	"CardManager.hpp"
+	"Pos.hpp"
 	<SFML/Graphics.hpp>
 
 1763784208 source:c:\users\user\proyectopoo\duelft\src\board.cpp
@@ -1410,11 +1409,11 @@
 	<SFML/Graphics.hpp>
 	"Game.hpp"
 
-1766867921 source:e:\codeblocks\proyectopoo\duelft\src\cardmanager.cpp
+1767056430 source:e:\codeblocks\proyectopoo\duelft\src\cardmanager.cpp
 	"CardManager.hpp"
 	<iostream>
 
-1766867921 e:\codeblocks\proyectopoo\duelft\include\cardmanager.hpp
+1767056430 e:\codeblocks\proyectopoo\duelft\include\cardmanager.hpp
 	<vector>
 	"CardData.hpp"
 
@@ -1838,4 +1837,6 @@
 	<SFML/Graphics/PrimitiveType.hpp>
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
+
+1767058295 e:\codeblocks\proyectopoo\duelft\include\pos.hpp
 

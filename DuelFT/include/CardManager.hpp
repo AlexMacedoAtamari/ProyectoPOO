@@ -6,17 +6,10 @@
 
 using namespace std;
 
-// ---------------------------------------------------------------------------
-// CardManager
-//
-// Esta clase administra TODAS LAS CARTAS del juego:
-//
+// La clase CardManeger administra TODAS LAS CARTAS del juego:
 //  - ninjas  → vector que guarda datos de cartas ninja
 //  - piratas → vector que guarda datos de cartas pirata
-//
-// Aquí solo DECLARO la estructura de la clase.
-// Las funciones se IMPLEMENTAN en CardManager.cpp
-// ---------------------------------------------------------------------------
+
 class CardManager {
 
 public:

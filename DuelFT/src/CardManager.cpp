@@ -1,24 +1,20 @@
 #include "CardManager.hpp"
 #include <iostream>
 
-// --------------------------------------------------------------
-// Constructor
-// --------------------------------------------------------------
-// Cuando se crea un CardManager, automáticamente se cargan
+// Al crear CardManager, automáticamente se cargan
 // todas las cartas Ninja y Pirata.
 CardManager::CardManager() {
     loadNinjas();
     loadPiratas();
 }
 
-// --------------------------------------------------------------
-// Cargar todas las cartas Ninja
-// Cada carta debe coincidir EXACTAMENTE con sus imágenes:
+// Se carga todas las cartas Ninja
+// Cada carta coincide EXACTAMENTE con sus imágenes:
 // imagen 1 → carta ID 0
 // imagen 2 → carta ID 1
 // ...
 // imagen 19 → carta ID 18
-// --------------------------------------------------------------
+
 void CardManager::loadNinjas() {
 
     ninjas.clear();
@@ -37,8 +33,6 @@ void CardManager::loadNinjas() {
     c.endvalor = 1;
     c.attribute = "Bandera Marron/Amarilla con X";
     c.effect = "Si gana un enfrentamiento obtienes +1 moneda.";
-    // Explicación futura:
-    // → Cuando esta carta gane combate, sumar +1 moneda al jugador.
     ninjas.push_back(c);
 
     // ==========================================================
@@ -281,9 +275,8 @@ void CardManager::loadNinjas() {
 }
 
 
-// --------------------------------------------------------------
-// Cargar cartas Pirata — exactamente igual en idea
-// --------------------------------------------------------------
+// Se carga todas las cartas Pirata
+
 void CardManager::loadPiratas() {
 
     piratas.clear();
@@ -504,10 +497,7 @@ void CardManager::loadPiratas() {
 
 }
 
-
-// --------------------------------------------------------------
 // Acceso rápido a las cartas por ID
-// --------------------------------------------------------------
 
 CardData& CardManager::getNinja(int id) {
     return ninjas[id];
