@@ -5,6 +5,9 @@
 #include <cstdlib>
 #include <ctime>
 
+/// Estudiantes:     Macedo Atamari Alex Darwin
+///                  Palacios Hurtado Royer Johan
+
 using namespace sf;
 
 Game::Game() {

@@ -54,6 +54,7 @@
 		<Unit filename="include/CardData.hpp" />
 		<Unit filename="include/CardManager.hpp" />
 		<Unit filename="include/Game.hpp" />
+		<Unit filename="include/Pos.hpp" />
 		<Unit filename="src/Board.cpp" />
 		<Unit filename="src/CardManager.cpp" />
 		<Unit filename="src/Game.cpp" />
